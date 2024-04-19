@@ -6,7 +6,12 @@ interface ButtonProps {
   icon?: string
   variant: string
 }
-export default function Button({ type, title, icon, variant }: ButtonProps) {
+export default function Button({
+  type = "button",
+  title = "click me",
+  icon,
+  variant = "btn_green"
+}: ButtonProps) {
   return (
     <button
       type={type}
