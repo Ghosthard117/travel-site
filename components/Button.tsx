@@ -5,17 +5,19 @@ interface ButtonProps {
   title: string
   icon?: string
   variant: string
+  full?: boolean
 }
 export default function Button({
   type = "button",
   title = "click me",
   icon,
-  variant = "btn_green"
+  variant = "btn_green",
+  full
 }: ButtonProps) {
   return (
     <button
       type={type}
-      className={`flexCenter gap-3 rounded-full border ${variant}`}
+      className={`flexCenter gap-3 rounded-full border ${variant} ${full && 'w-full'}`}
     >
       {icon &&
         <Image
